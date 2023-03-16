@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel DC Comics</title>
 
-        {{-- Includiamo gli assets con la direttiva @vite --}}
-        @vite('resources/js/app.js')
-    </head>
-    <body>
+@section('content')
+    <div class="container">
 
-        <header>
-            HEADER
-        </header>
+    <h1 class="text-center">
+        Laravel DC Comics
+    </h1>
 
-        <main>
-            <div class="container">
-
-                <h1 class="text-center">
-                    Laravel DC Comics
-                </h1>
-
-                <div class="row">
-                    <div class="col text-center">
-
-                        <div class="card">
-                            
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <footer>
-            FOOTER
-        </footer>
-
-    </body>
-</html>
+    </div>
+@endsection
