@@ -26,5 +26,9 @@
             </li>
         </ul>
     </div>
+
+    <a href=" {{ route('comics.index') }} " class="btn btn-primary">
+        Torna alla home
+    </a>
 </div>     
 @endsection

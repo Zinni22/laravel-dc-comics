@@ -11,17 +11,9 @@
     </head>
     <body>
 
-        <header>
-            HEADER
-        </header>
-
         <main>
             @yield('content')
         </main>
-
-        <footer>
-            FOOTER
-        </footer>
 
     </body>
 </html>

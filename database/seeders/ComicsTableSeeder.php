@@ -102,6 +102,5 @@ class ComicsTableSeeder extends Seeder
 
         };
 
-        dd($comics);
     }
 }
