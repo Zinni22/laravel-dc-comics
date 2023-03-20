@@ -111,6 +111,14 @@ class ComicsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //recupero l'istanza da eliminare
+        $comics=Comic::FindOrFail($id);
+
+        //elimino l'istanza
+        $comics->delete();
+
+        //rimando all'index
+        return redirect()->route('comics.index');
+
     }
 }
