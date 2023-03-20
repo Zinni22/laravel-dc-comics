@@ -6,11 +6,13 @@
 <div class="container">
 
     <h1>
-        Aggiungi un nuovo comic
+        Aggiorna un comic
     </h1>
         
-    <form action="{{ route('comics.store') }}" method="post">
+    <form action="{{ route('comics.update', $comics->id) }}" method="post">
         @csrf
+
+        @method('PUT')
 
         <div class="mb-3">
             <label for="title" class="form-label">Titolo *</label>
@@ -20,6 +22,7 @@
             name="title"
             id="title"
             placeholder="Titolo"
+            value="{{ $comics->title }}"
             required>
         </div>
 
@@ -31,6 +34,7 @@
             name="series"
             id="series"
             placeholder="Serie"
+            value="{{ $comics->series }}"
             required
             >
         </div>
@@ -43,6 +47,7 @@
             name="sale_date"
             id="sale_date"
             placeholder="Data di rilascio"
+            value="{{ $comics->sale_date }}"
             >
         </div>
 
@@ -54,13 +59,14 @@
             name="type"
             id="type"
             placeholder="Tipo"
+            value="{{ $comics->type }}"
             required>
         </div>
 
         
 
-        <button type="submit" class="btn btn-success">
-            Aggiungi
+        <button type="submit" class="btn btn-warning">
+            Aggiorna
         </button>
 
         </form>

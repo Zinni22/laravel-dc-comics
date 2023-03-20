@@ -28,7 +28,7 @@
                     </a>
 
                     {{-- UPDATE --}}
-                    <a href=" {{ route('comics.show', $comic->id) }} " class="btn btn-warning">
+                    <a href=" {{ route('comics.edit', $comic->id) }} " class="btn btn-warning">
                         Aggiorna
                     </a>
 

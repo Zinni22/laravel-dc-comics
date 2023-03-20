@@ -42,7 +42,6 @@ class ComicsController extends Controller
         //prendo tutti i dati messi nel form
         $data = $request->all();
 
-      //  dd($data);
         //creo la nuova istanza
         $newComic = new Comic;
             $newComic->title = $data['title'];
@@ -76,19 +75,32 @@ class ComicsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comics=Comic::FindOrFail($id);
+
+        return view('comics.edit', compact('comics'));
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        //creo la nuova istanza
+        $comics=Comic::FindOrFail($id);
+            $comics->title = $data['title'];
+            $comics->series = $data['series'];
+            $comics->sale_date = $data['sale_date'];
+            $comics->type = $data['type'];
+        $comics->save();
+
+        //rimando la pagina alla show
+        return redirect()->route('comics.show', $comics->id);
     }
 
     /**
