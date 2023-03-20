@@ -14,3 +14,6 @@ Completare il resto delle operazioni CRUD:
 5. edit()
 6. update()
 7. destroy()
+
+- Milestone 4:
+Aggiungere delle validazioni backend
