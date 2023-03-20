@@ -35,7 +35,7 @@
                         </a>
 
                         {{-- DELETE --}}
-                        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                        <form onsubmit="return confirm('Sei sicuro di voler eliminare questo comic?');" action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
 
