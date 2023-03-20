@@ -8,6 +8,18 @@
     <h1>
         Aggiungi un nuovo comic
     </h1>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+
+            @foreach ($errors->all() as $error)
+                <li> {{ $error }} </li>
+            @endforeach
+
+        </ul>
+    </div>
+    @endif
         
     <form action="{{ route('comics.store') }}" method="post">
         @csrf
@@ -20,6 +32,7 @@
             name="title"
             id="title"
             placeholder="Titolo"
+            min="3"
             required>
         </div>
 
@@ -31,6 +44,7 @@
             name="series"
             id="series"
             placeholder="Serie"
+            min="3"
             required
             >
         </div>
@@ -54,6 +68,8 @@
             name="type"
             id="type"
             placeholder="Tipo"
+            min="3"
+            max="200"
             required>
         </div>
 
